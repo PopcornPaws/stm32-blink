@@ -1,0 +1,31 @@
+[package]
+name = "stm32-blink"
+version = "0.1.0"
+authors = ["Mark Melczer <melczer7@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+# provides access to low level ARM CPU registers (used for delay)
+cortex-m = "0.6.1"
+# provides startup code for the ARM CPU
+cortex-m-rt = "0.6.10"
+# enables use of I/O from the target to the host computer running a debugger
+cortex-m-semihosting = "0.3.5"
+# handles panics (halts the cpu)
+panic-halt = "0.2.0"
+# provides access to the stm32f303 registers
+stm32f3 = { version = "0.9.0", features = ["stm32f303", "rt"] } 
+
+[profile.dev]
+opt-level = 3
+debug = true # symbols are nice and they don't increase the size on Flash
+lto = true # better optimizations
+codegen-units = 1 # better optimizations
+incremental = false
+
+[profile.release]
+opt-level = 3
+debug = true
+lto = true
+codegen-units = 1
+incremental = false
