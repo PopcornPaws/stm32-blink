@@ -1,0 +1,39 @@
+== LEDs ==
+
+LED3  - North:      Port E, Pin 9  (red)
+LED4  - North-West: Port E, Pin 8  (blue)
+LED5  - North-East: Port E, Pin 10 (orange)
+LED6  - West:       Port E, Pin 15 (green)
+LED7  - East:       Port E, Pin 11 (green)
+LED8  - South-West: Port E, Pin 14 (orange)
+LED9  - South-East: Port E, Pin 12 (blue)
+LED10 - South:      Port E, Pin 13 (red)
+
+== System Clocks ==
+
+AHB  - Advanced High Performance Bus (168 MHz)
+ABP1 - Low Speed Advanced Peripheral Bus (42 MHz)
+ABP2 - High Speed Advanced Peripheral Bus (84 MHz)
+
+These are controlled by the RCC - Reset and Clock Control module
+
+== Port pin modes ==
+
+Digital input / output
+Analog input / output
+Alternate
+
+Input -> Float, pull up, pull down
+Output -> Open drain (OD)
+
+== Typical GPIO settings ==
+
+Peripheral ===== Config ===== Mode ===== Pull
+LED              OUT (2MHz)   PP        pull-up and down
+BUTTON           IN (2MHz)    --        pull-down
+ADC              IN (analog)  --        no pull, select proper speed
+USART            AF (50MHz)   PP        pull-up
+SPI              AF (50MHz)   PP        pull-up
+I2C              AF (50MHz)   OD        no-pull
+USB              AF (50MHz)   PP        no-pull
+CAN              AF9 (2MHz)   PP        no-pull
