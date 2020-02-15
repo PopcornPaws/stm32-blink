@@ -3,7 +3,7 @@ target extended-remote :3333
 #target extended-remote | openocd -f openocd.cfg
 
 # print demangled symbols
-set pring asm-demangle on
+set print asm-demangle on
 
 # enable printing output from the target on host
 monitor arm semihosting enable
@@ -15,5 +15,4 @@ load
 
 monitor reset halt
 
-# TODO stepi vs step
 stepi
