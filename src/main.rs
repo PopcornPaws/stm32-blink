@@ -1,9 +1,7 @@
 #![no_main]
 #![no_std]
 
-extern crate cortex_m_rt;
 extern crate panic_halt;
-extern crate stm32f3;
 
 use cortex_m_rt::entry;
 use stm32f3::stm32f303;
